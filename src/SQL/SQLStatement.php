@@ -27,7 +27,8 @@ class SQLStatement
     protected $tables = [];
     protected $columns = [];
     protected $order = [];
-    protected $distinct = false; protected $ignore = false;
+    protected $distinct = false;
+    protected $ignore = false;
     protected $group = [];
     protected $limit = 0;
     protected $offset = -1;
