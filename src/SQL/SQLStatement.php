@@ -27,7 +27,7 @@ class SQLStatement
     protected $tables = [];
     protected $columns = [];
     protected $order = [];
-    protected $distinct = false;
+    protected $distinct = false; protected $ignore = false;
     protected $group = [];
     protected $limit = 0;
     protected $offset = -1;
@@ -377,6 +377,14 @@ class SQLStatement
     }
 
     /**
+     * @param bool $value
+     */
+    public function setIgnore (bool $value)
+    {
+        $this->ignore = $value;
+    }
+
+    /**
      * @param int $value
      */
     public function setLimit(int $value)
@@ -450,6 +458,13 @@ class SQLStatement
         return $this->distinct;
     }
 
+    /**
+     * @param bool $value
+     */
+    public function getIgnore  ( ):bool
+    {
+       return  $this->ignore;
+    }
     /**
      * @return array
      */
