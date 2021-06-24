@@ -65,7 +65,7 @@ class Compiler
     {
         $columns = $this->handleColumns($insert->getColumns());
 
-        $sql = $insert->getIgnore() ? 'INSERT INTO ' : 'INSERT IGNORE INTO ';
+        $sql = $insert->getIgnore() ?  'INSERT IGNORE INTO ':'INSERT INTO ' ;
         $sql .= $this->handleTables($insert->getTables());
         $sql .= ($columns === '*') ? '' : ' (' . $columns . ')';
         $sql .= $this->handleInsertValues($insert->getValues());

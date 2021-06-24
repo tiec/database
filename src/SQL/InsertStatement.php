@@ -24,6 +24,16 @@ class InsertStatement
     protected $sql;
 
     /**
+     * @param bool $value
+     * @return SelectStatement
+     */
+    public function distinct(bool $value = true): self
+    {
+        $this->sql->setDistinct($value);
+        return $this;
+    }
+
+    /**
      * InsertStatement constructor.
      * @param SQLStatement|null $statement
      */

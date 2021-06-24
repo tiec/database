@@ -57,9 +57,9 @@ class SelectStatement extends BaseStatement
      * @param bool $value
      * @return SelectStatement
      */
-    public function distinct(bool $value = true): self
+    public function ignore(bool $value = true): self
     {
-        $this->sql->setDistinct($value);
+        $this->sql->setIgnore($value);
         return $this;
     }
 

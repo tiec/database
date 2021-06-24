@@ -36,6 +36,16 @@ class Insert extends InsertStatement
     }
 
     /**
+     * @param bool $value
+     * @return SelectStatement
+     */
+    public function ignore(bool $value = true): self
+    {
+        $this->sql->setIgnore($value);
+        return $this;
+    }
+
+    /**
      * @param   string $table
      *
      * @return  boolean
